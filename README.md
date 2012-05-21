@@ -4,14 +4,14 @@ xi-bundle-filebrowser
 Filelib filebrowser for wysiwyg editors
 
 dependencies:
-filelib *https://github.com/xi-project/xi-filelib
-xi-bundle-filelib *https://github.com/xi-project/xi-bundle-filelib
+ - filelib *https://github.com/xi-project/xi-filelib 
+ - xi-bundle-filelib *https://github.com/xi-project/xi-bundle-filelib
  
 ## howto setup
 1. Make sure you have filelib and xi-bundle-filelib installed
 2. Install your wysivyg editor. This pacage is tested to work with TinyMCE but it sould also work with CKEditor
 3. Initialize custom browser callback in your js/coffeescript 
-4. edit your config file
+4. Edit your config file
 
 ### 1. install filelib and xi-bundle-filelib
 ```
@@ -65,7 +65,7 @@ window.TinyMceFilelibFileBrowserCallback = (field_name, url, type, win) ->
     return false;
 
 ```
-### edit your config file
+### 4. Edit your config file
 
 folder is name of virtual filelib folder where your files are located
 ```yml
