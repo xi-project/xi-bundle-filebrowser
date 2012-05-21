@@ -39,7 +39,7 @@ AppKernel.php
 ?>
 ```
 
-### 2. Installing wysivyg editor
+### 2. Installing wysiwyg editor
 You can do this anyway you like. It is possible to use stfalcon TinymceBundle for this *https://github.com/stfalcon/TinymceBundle
 
 if you use stfalcon tinymcebundle be adviced that you must specify your callback in each theme
