@@ -23,6 +23,12 @@ Deps -file:
 [XiFilelibBundle]
     git=http://github.com/xi-project/xi-bundle-filelib    
     target=/bundles/Xi/Bundle/FilelibBundle
+
+[XiFilebrowserBundle]
+    git@github.com:xi-project/xi-bundle-filebrowser.git
+    target=/bundles/Xi/Bundle/Filebrowser
+    version=master
+
 ```
 
 AppKernel.php
