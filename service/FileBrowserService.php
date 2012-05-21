@@ -1,12 +1,12 @@
 <?php
 
-namespace Xi\FileBrowserBundle\Service;
+namespace Xi\Bundle\FileBrowserBundle\Service;
 
 use Xi\Filelib\FileLibrary,      
     Symfony\Component\HttpFoundation\File\UploadedFile,
-    Xi\FilebrowserBundle\Form\UploadType,
+    Xi\Bundle\FilebrowserBundle\Form\UploadType,
     Symfony\Component\Form\FormFactory,
-    Xi\FilebrowserBundle\Component\Spl\CallbackFilterIterator as XiCallbackFilterIterator,
+    Xi\Bundle\FilebrowserBundle\Component\Spl\CallbackFilterIterator as XiCallbackFilterIterator,
     \ArrayIterator;
     
 class FileBrowserService 

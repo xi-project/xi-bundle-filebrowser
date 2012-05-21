@@ -1,6 +1,6 @@
 <?php
 
-namespace Xi\FilebrowserBundle;
+namespace Xi\Bundle\FilebrowserBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

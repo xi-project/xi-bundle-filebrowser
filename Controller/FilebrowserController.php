@@ -1,6 +1,6 @@
 <?php
 
-namespace Xi\FilebrowserBundle\Controller;
+namespace Xi\Bundle\FilebrowserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Xi\Filelib\FileLibrary;
 use Xi\Filelib\Folder\DefaultFolderOperator;
 use Xi\Filelib\File\DefaultFileOperator;
-use Xi\FileBrowserBundle\Service\FileBrowserService;
+use Xi\Bundle\FileBrowserBundle\Service\FileBrowserService;
 
 class FilebrowserController extends Controller
 {

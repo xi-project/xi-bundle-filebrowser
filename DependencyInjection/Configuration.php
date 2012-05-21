@@ -1,6 +1,6 @@
 <?php
 
-namespace Xi\FilebrowserBundle\DependencyInjection;
+namespace Xi\Bundle\FilebrowserBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

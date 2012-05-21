@@ -1,6 +1,6 @@
 <?php
 
-namespace Xi\FilebrowserBundle\Form;
+namespace Xi\Bundle\FilebrowserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;

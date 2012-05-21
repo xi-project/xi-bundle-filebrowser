@@ -1,9 +1,9 @@
 <?php
 
-namespace Xi\FileBrowserBundle\Tests\Service;
+namespace Xi\Bundle\FileBrowserBundle\Tests\Service;
 
 use PHPUnit_Framework_TestCase,
-    Xi\FileBrowserBundle\Service\FileBrowserService,
+    Xi\Bundle\FileBrowserBundle\Service\FileBrowserService,
     Xi\Doctrine\Fixtures\FieldDef,
     Symfony\Component\HttpFoundation\File\UploadedFile,
     Xi\Filelib\File\FileOperator,

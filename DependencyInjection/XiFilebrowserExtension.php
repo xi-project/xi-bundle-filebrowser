@@ -1,6 +1,6 @@
 <?php
 
-namespace Xi\FilebrowserBundle\DependencyInjection;
+namespace Xi\Bundle\FilebrowserBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

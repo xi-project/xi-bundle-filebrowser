@@ -1,5 +1,5 @@
 <?php
-namespace Xi\FilebrowserBundle\Component\Spl;
+namespace Xi\Bundle\FilebrowserBundle\Component\Spl;
 
 
 class CallbackFilterIterator extends \FilterIterator
