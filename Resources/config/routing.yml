@@ -1,0 +1,7 @@
+xi_filelib_filebrowser_list:
+    pattern:  /file/browser/list/{type}    
+    defaults: { _controller: XiFilebrowserBundle:Filebrowser:list, type:any }
+
+xi_filelib_filebrowser_upload:
+    pattern:  /file/browser/upload
+    defaults: { _controller: XiFilebrowserBundle:Filebrowser:upload }

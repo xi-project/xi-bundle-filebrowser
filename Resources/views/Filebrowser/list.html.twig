@@ -1,0 +1,36 @@
+{% extends 'XiFilebrowserBundle::browser_layout.html.twig' %}
+
+{% block content %}
+    <ul class="files">
+        {% for file in files %}
+            <li class="file">
+                <div class="imagecontainer">
+                    <div class="versions">
+                        <ul>
+                            <li><a href="{{filelib_url(file)}}">{{'original'|trans}}</a></li>
+                            {% for version in fileoperator.getProfile(file.getProfile).getFileVersions(file) %} 
+                                <li><a href="{{filelib_url(file, version)}}">{{version|trans}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% if(fileoperator.hasVersion(file, "thumb"))%}
+                        <img src="{{filelib_file(file, "thumb")}}">
+                    {% endif %}
+                </div>
+                <span class="filename">{{file.name}}</span>
+                </a>
+            </li>
+        {% else %}
+            <span>{{'filebrowser.no_files_found'|trans}}</span>
+        {% endfor %}
+    </ul>
+
+
+    <hr />
+    <div class="upload-container">
+        <form id="upload-form" action="{{ url('xi_filelib_filebrowser_upload') }}"  method="post" {{ form_enctype(uploadForm) }} novalidate>
+            {{ form_widget(uploadForm) }}                
+            <button type="submit" class="button">{{'filebrowser.upload'|trans}}</button>            
+        </form>
+    </div>
+{% endblock %}

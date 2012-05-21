@@ -1,0 +1,53 @@
+#content {
+    .files {
+        clear: both;
+        .file {
+            padding: 10px;
+            display: block;
+            float: left;
+            .imagecontainer {
+                margin: 0px auto;
+                width: 64px;
+                height: 64px;
+                line-height: 64px;
+                img{
+                    vertical-align: middle;
+                    border: 0px;
+                }
+
+                .versions{
+                    line-height: 18px;
+                    display: none;
+                    position: absolute;
+                    background-color: white;
+                    padding: 10px;
+                    border: 1px solid black;
+                    ul {
+                        padding: 0px;
+                        list-style: none;
+                    }
+                }
+            }
+            .filename{
+                color: black;
+                display: block;
+            }
+        }
+    }
+
+    hr {
+        clear: both;
+    }
+
+    .upload-container{
+        display: block;
+        clear: both;
+        margin-top: 10px;
+        label {
+            padding-right: 20px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    }
+}

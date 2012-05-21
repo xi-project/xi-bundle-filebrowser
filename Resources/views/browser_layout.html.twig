@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=7, IE=9" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Language" content="fi" />
+        
+        <script type="text/javascript" src="/bundles/stfalcontinymce/vendor/tiny_mce/tiny_mce_popup.js"></script>
+        {% javascripts output="/js/filebrowser.js" filter="?yui_js"
+            '@XiFilebrowserBundle/Resources/coffee/filebrowser.coffee'  
+        %}
+
+            <script type="text/javascript" src="{{ asset_url }}"></script>                             
+        {% endjavascripts %}
+            
+
+        {% stylesheets filter='yui_css' output='/css/filebrowser.css' 
+            '@XiFilebrowserBundle/Resources/less/filebrowser.less'
+        %}
+
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+        {% endstylesheets %}
+        
+    </head>
+
+    <body onload="tinyMCEPopup.executeOnLoad('init();')">
+      <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+
+</html>
+
+
+
+
+
+
