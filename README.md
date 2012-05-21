@@ -12,6 +12,7 @@ dependencies:
 2. Install your wysivyg editor. This pacage is tested to work with TinyMCE but it sould also work with CKEditor
 3. Initialize custom browser callback in your js/coffeescript 
 4. Edit your config file
+5. You might want to restrict access to /file/browser/. Use your project security config file for this.
 
 ### 1. install filelib and xi-bundle-filelib
 ```
