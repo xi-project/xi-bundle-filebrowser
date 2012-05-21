@@ -78,3 +78,12 @@ folder is name of virtual filelib folder where your files are located
 xi_filebrowser:
   folder: filebrowser
 ```
+
+Update your routing to take account filebrowser 
+routing.yml
+
+```yml
+XiFilebrowserBundle:
+    resource: "@XiFilebrowserBundle/Resources/config/routing.yml"
+    prefix:   /
+```
