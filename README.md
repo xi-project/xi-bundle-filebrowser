@@ -14,6 +14,7 @@ xi-bundle-filelib *https://github.com/xi-project/xi-bundle-filelib
 4. edit your config file
 
 ### 1. install filelib and xi-bundle-filelib
+```
 Deps -file:
 [xi-filelib]
     git=http://github.com/xi-project/xi-filelib.git
@@ -22,7 +23,8 @@ Deps -file:
 [XiFilelibBundle]
     git=http://github.com/xi-project/xi-bundle-filelib    
     target=/bundles/Xi/Bundle/FilelibBundle
-    
+```
+
 AppKernel.php
 ```php
 <?php 
