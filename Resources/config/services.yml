@@ -1,4 +1,4 @@
 services:
     xi_filebrowser.service.filebrowser:
-        class:     Xi\Bundle\FileBrowserBundle\Service\FileBrowserService
+        class:     Xi\Bundle\FilebrowserBundle\Service\FileBrowserService
         arguments: ["@filelib", "@form.factory"]

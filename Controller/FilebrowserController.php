@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Xi\Filelib\FileLibrary;
 use Xi\Filelib\Folder\DefaultFolderOperator;
 use Xi\Filelib\File\DefaultFileOperator;
-use Xi\Bundle\FileBrowserBundle\Service\FileBrowserService;
+use Xi\Bundle\FilebrowserBundle\Service\FileBrowserService;
 
 class FilebrowserController extends Controller
 {

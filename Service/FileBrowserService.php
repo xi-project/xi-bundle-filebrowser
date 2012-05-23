@@ -1,6 +1,6 @@
 <?php
 
-namespace Xi\Bundle\FileBrowserBundle\Service;
+namespace Xi\Bundle\FilebrowserBundle\Service;
 
 use Xi\Filelib\FileLibrary,      
     Symfony\Component\HttpFoundation\File\UploadedFile,
