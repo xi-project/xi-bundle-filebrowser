@@ -58,7 +58,7 @@ window.TinyMceFilelibFilebrowserCallback = (field_name, url, type, win) ->
 
     tinyMCE.activeEditor.windowManager.open({
         file : "/file/browser/list/"+ type,
-        title : 'File Browser',
+        title : 'Filebrowser',
         width : 800,  
         height : 800,
         resizable : "yes",
