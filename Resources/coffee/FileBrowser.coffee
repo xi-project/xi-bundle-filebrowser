@@ -1,4 +1,4 @@
-window.FileBrowserDialogue =
+window.FilebrowserDialogue =
     init: ->
         elements = document.getElementsByClassName('imagecontainer')
         index = 0
@@ -30,4 +30,4 @@ window.FileBrowserDialogue =
         tinyMCEPopup.close()
 
 
-tinyMCEPopup.onInit.add(FileBrowserDialogue.init, FileBrowserDialogue);
+tinyMCEPopup.onInit.add(FilebrowserDialogue.init, FilebrowserDialogue);

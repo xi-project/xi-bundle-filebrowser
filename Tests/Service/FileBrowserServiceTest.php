@@ -3,7 +3,7 @@
 namespace Xi\Bundle\FilebrowserBundle\Tests\Service;
 
 use PHPUnit_Framework_TestCase,
-    Xi\Bundle\FilebrowserBundle\Service\FileBrowserService,
+    Xi\Bundle\FilebrowserBundle\Service\FilebrowserService,
     Xi\Doctrine\Fixtures\FieldDef,
     Symfony\Component\HttpFoundation\File\UploadedFile,
     Xi\Filelib\File\FileOperator,
@@ -16,10 +16,10 @@ use PHPUnit_Framework_TestCase,
  * @group service
  * @group filebrowser
  */
-class FileBrowserServiceTest extends PHPUnit_Framework_Testcase
+class FilebrowserServiceTest extends PHPUnit_Framework_Testcase
 {
     /**
-     * @var FileBrowserService
+     * @var FilebrowserService
      */
     protected $service;
 
@@ -46,7 +46,7 @@ class FileBrowserServiceTest extends PHPUnit_Framework_Testcase
         $this->filelib->expects($this->any())->method('getFileOperator')->will($this->returnValue($this->fileOperator));
 
         $this->formFactory =  $this->getMockBuilder('Symfony\Component\Form\FormFactory')->disableOriginalConstructor()->getMock();
-        $this->service = new FileBrowserService(
+        $this->service = new FilebrowserService(
             $this->filelib,
             $this->formFactory,
             array('folder' => 'puuppa')

@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Xi\Filelib\FileLibrary;
 use Xi\Filelib\Folder\DefaultFolderOperator;
 use Xi\Filelib\File\DefaultFileOperator;
-use Xi\Bundle\FilebrowserBundle\Service\FileBrowserService;
+use Xi\Bundle\FilebrowserBundle\Service\FilebrowserService;
 
 class FilebrowserController extends Controller
 {
@@ -17,15 +17,15 @@ class FilebrowserController extends Controller
     public function listAction($type = 'any')
     {   
         $this->get('session')->set('filebrowser_type', $type);
-        $files = $this->getFileBrowserService()->getFiles();
+        $files = $this->getFilebrowserService()->getFiles();
                 
         if($type !== 'any'){
-            $files = $this->getFileBrowserService()->filterByType($files, array($type));
+            $files = $this->getFilebrowserService()->filterByType($files, array($type));
         }
         
         return $this->render('XiFilebrowserBundle:Filebrowser:list.html.twig', array(
             'files'        => $files,
-            'uploadForm'   => $this->getFileBrowserService()->getUploadForm()->createView(),
+            'uploadForm'   => $this->getFilebrowserService()->getUploadForm()->createView(),
             'fileoperator' => $this->getFileOperator()
         ));
     }
@@ -50,15 +50,15 @@ class FilebrowserController extends Controller
         $request             = $this->getRequest();
               
         $uploadedFile = $this->getUploadedFileData();
-        $this->getFileBrowserService()->uploadAttachment($uploadedFile, 'articleimage');
+        $this->getFilebrowserService()->uploadAttachment($uploadedFile, 'articleimage');
         
         return $this->redirect($this->generateUrl('xi_filelib_filebrowser_list', array('type' => $this->get('session')->get('filebrowser_type'))));
     }    
     
     /**
-     * @return FileBrowserService
+     * @return FilebrowserService
      */
-    private function getFileBrowserService()
+    private function getFilebrowserService()
     {
         return $this->container->get('xi_filebrowser.service.filebrowser');
     }

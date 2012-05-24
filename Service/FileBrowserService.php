@@ -9,7 +9,7 @@ use Xi\Filelib\FileLibrary,
     Xi\Bundle\FilebrowserBundle\Component\Spl\CallbackFilterIterator as XiCallbackFilterIterator,
     \ArrayIterator;
     
-class FileBrowserService 
+class FilebrowserService 
 {
 
     /**

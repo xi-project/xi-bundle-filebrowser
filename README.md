@@ -46,7 +46,7 @@ if you use stfalcon tinymcebundle be adviced that you must specify your callback
 ```yml
     theme:
         simple:
-            file_browser_callback: TinyMceFilelibFileBrowserCallback
+            file_browser_callback: TinyMceFilelibFilebrowserCallback
 ```
 
 ### 3. Initialize custom browser callback in your js/coffeescript 
@@ -54,7 +54,7 @@ if you use stfalcon tinymcebundle be adviced that you must specify your callback
 Following example is in coffeescript format and for TinyMce
 ```coffeescript
 
-window.TinyMceFilelibFileBrowserCallback = (field_name, url, type, win) ->
+window.TinyMceFilelibFilebrowserCallback = (field_name, url, type, win) ->
 
     tinyMCE.activeEditor.windowManager.open({
         file : "/file/browser/list/"+ type,
