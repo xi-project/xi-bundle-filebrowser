@@ -1,0 +1,24 @@
+{
+    "name": "xi/filebrowser-bundle",
+    "description": "Filelib filebrowser for wysiwyg editors",
+    "authors": [
+        {
+            "name": "xi-project",
+            "email": "xi.devs@gmail.com"
+        }
+    ],
+    "require": {
+        "xi/filelib": "dev-master",
+        "symfony/event-dispatcher": "=v2.0.14",
+        "symfony/http-foundation": "=v2.0.14",
+        "symfony/form": "=v2.0.14"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Xi\\Bundle\\Filebrowser": "xi/bundle/filebrowser/"
+        }
+    },
+
+    "target-dir": "bundle/filebrowser"
+}
