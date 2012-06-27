@@ -46,12 +46,10 @@ class FilebrowserService
         $folder = $this->filelib->getFolderOperator()->createByUrl($this->config['folder']);         
         
         // Prepare file upload 
-        $path = $uploadedFile->getRealPath();
-        $upload = $this->filelib->getFileOperator()->prepareUpload($path);
+        $upload = $this->filelib->getFileOperator()->prepareUpload($uploadedFile->getRealPath());
         
         // Override file name with info from client
-        $orig = $uploadedFile->getClientOriginalName();
-        $upload->setOverrideFilename($orig);
+        $upload->setOverrideFilename($uploadedFile->getClientOriginalName());
         
         // Upload file
         $file = $this->filelib->getFileOperator()->upload($upload, $folder, $profile);
