@@ -7,7 +7,7 @@ use PHPUnit_Framework_TestCase,
     Xi\Doctrine\Fixtures\FieldDef,
     Symfony\Component\HttpFoundation\File\UploadedFile,
     Xi\Filelib\File\FileOperator,
-    Xi\Filelib\File\FileItem,
+    Xi\Filelib\File\File,
     Xi\Filelib\FileLibrary,
     Xi\Filelib\File\Upload\FileUpload,
     Xi\Filelib\Folder\FolderOperator;
@@ -39,7 +39,16 @@ class FilebrowserServiceTest extends PHPUnit_Framework_Testcase
 
         $this->folderOperator = $this->getMockBuilder('Xi\Filelib\Folder\DefaultFolderOperator')->disableOriginalConstructor()->getMock();
         $this->fileOperator = $this->getMockBuilder('Xi\Filelib\File\DefaultFileOperator')->disableOriginalConstructor()->getMock();
-        $this->fileUpload= $this->getMockBuilder('Xi\Filelib\File\Upload\FileUpload')->disableOriginalConstructor()->getMock();
+
+        // mock an stdClass while problems mocking a proper FileUpload class
+        // $this->fileUpload = $this->getMockBuilder('Xi\Filelib\File\Upload\FileUpload')->disableOriginalConstructor()->getMock();
+        $this->fileUpload = $this->getMockBuilder('\StdClass')
+        ->disableOriginalConstructor()
+        // ->setMockClassName('FileUpload') // not working until phpunit 3.7
+        ->setMethods(array('setOverrideFilename'))
+        ->getMock();
+
+        $this->fileOperator->expects($this->any())->method('prepareUpload')->will($this->returnValue($this->fileUpload));
 
         $this->filelib = $this->getMockBuilder('Xi\Filelib\FileLibrary')->disableOriginalConstructor()->getMock();
         $this->filelib->expects($this->any())->method('getFolderOperator')->will($this->returnValue($this->folderOperator));
@@ -52,7 +61,7 @@ class FilebrowserServiceTest extends PHPUnit_Framework_Testcase
             array('folder' => 'puuppa')
         );
         
-        $this->folder =  $this->getMockBuilder('Xi\Filelib\Folder\FolderItem')->disableOriginalConstructor()->getMock();
+        $this->folder =  $this->getMockBuilder('Xi\Filelib\Folder\Folder')->disableOriginalConstructor()->getMock();
         $this->uploadedFile = $this->getMockBuilder('Symfony\Component\HttpFoundation\File\UploadedFile')
                                        ->disableOriginalConstructor()->getMock();         
     }
@@ -65,7 +74,7 @@ class FilebrowserServiceTest extends PHPUnit_Framework_Testcase
         $this->folderOperator->expects($this->once())->method('createByUrl')->with('puuppa')->will($this->returnValue($this->folder));
    
         $this->fileOperator->expects($this->once())->method('prepareUpload')->will($this->returnValue($this->fileUpload));        
-        $this->file = $this->getMockBuilder('Xi\Filelib\File\FileItem')->disableOriginalConstructor()->getMock();
+        $this->file = $this->getMockBuilder('Xi\Filelib\File\File')->disableOriginalConstructor()->getMock();
 
         $this->fileOperator->expects($this->once())->method('upload')->with(
                 $this->anything(),
@@ -74,7 +83,7 @@ class FilebrowserServiceTest extends PHPUnit_Framework_Testcase
         
         
         $file = $this->service->uploadAttachment($this->uploadedFile);
-        $this->assertInstanceOf('Xi\Filelib\File\FileItem', $file);
+        $this->assertInstanceOf('Xi\Filelib\File\File', $file);
     }
    
     /**
@@ -110,13 +119,13 @@ class FilebrowserServiceTest extends PHPUnit_Framework_Testcase
        }));  
        
        $files = array();
-       $files[] = $this->createFileItem('image/jpeg');
-       $files[] = $this->createFileItem('application/luss');
-       $files[] = $this->createFileItem('image/png');
-       $files[] = $this->createFileItem('media/xooxoo');
-       $files[] = $this->createFileItem('application/tussi');
-       $files[] = $this->createFileItem('image/jpeg');
-       $files[] = $this->createFileItem('text/plain');
+       $files[] = $this->createFile('image/jpeg');
+       $files[] = $this->createFile('application/luss');
+       $files[] = $this->createFile('image/png');
+       $files[] = $this->createFile('media/xooxoo');
+       $files[] = $this->createFile('application/tussi');
+       $files[] = $this->createFile('image/jpeg');
+       $files[] = $this->createFile('text/plain');
  
        $imagefiles = $this->service->filterByType($files, array('image'));    
        $this->assertCount(3, $imagefiles);
@@ -126,9 +135,9 @@ class FilebrowserServiceTest extends PHPUnit_Framework_Testcase
 
     }
     
-    private function createFileItem($mimetype)
+    private function createFile($mimetype)
     {
-       return FileItem::create(array('mimetype' => $mimetype));
+       return File::create(array('mimetype' => $mimetype));
     }
 
     
