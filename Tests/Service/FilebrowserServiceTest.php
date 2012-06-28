@@ -83,7 +83,7 @@ class FilebrowserServiceTest extends PHPUnit_Framework_Testcase
         
         
         $file = $this->service->uploadAttachment($this->uploadedFile);
-        // $this->assertInstanceOf('Xi\Filelib\File\File', $file);
+        $this->assertInstanceOf('Xi\Filelib\File\File', $file);
     }
    
     /**
