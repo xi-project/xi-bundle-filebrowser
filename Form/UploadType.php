@@ -3,15 +3,19 @@
 namespace Xi\Bundle\FilebrowserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
 
 
 class UploadType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    /**
+     * @param  FormBuilderInterface $builder
+     * @param  array                $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
-        
+
         $builder
             ->add('file', 'file', array(
                 'property_path' => false,

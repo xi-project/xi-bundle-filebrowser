@@ -8,10 +8,10 @@
         }
     ],
     "require": {
-        "xi/filelib": "dev-master",
-        "symfony/event-dispatcher": "=v2.0.14",
-        "symfony/http-foundation": "=v2.0.14",
-        "symfony/form": "=v2.0.14"
+        "xi/filelib": "2.1.x-dev",
+        "symfony/event-dispatcher": "=v2.1.0-BETA1",
+        "symfony/http-foundation": "=v2.1.0-BETA1",
+        "symfony/form": "=v2.1.0-BETA1"
     },
 
     "autoload": {
