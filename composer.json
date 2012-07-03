@@ -16,9 +16,9 @@
 
     "autoload": {
         "psr-0": {
-            "Xi\\Bundle\\Filebrowser": "xi/bundle/filebrowser/"
+            "Xi\\Bundle\\Filebrowser": ""
         }
     },
 
-    "target-dir": "bundle/filebrowser"
+    "target-dir": "Xi/Bundle/FilebrowserBundle"
 }
