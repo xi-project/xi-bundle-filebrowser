@@ -7,13 +7,13 @@
             "email": "xi.devs@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "xi/filelib": "2.1.x-dev",
         "symfony/event-dispatcher": "=v2.1.0-BETA1",
         "symfony/http-foundation": "=v2.1.0-BETA1",
         "symfony/form": "=v2.1.0-BETA1"
     },
-
     "autoload": {
         "psr-0": {
             "Xi\\Bundle\\Filebrowser": ""
