@@ -18,7 +18,7 @@ class UploadType extends AbstractType
 
         $builder
             ->add('file', 'file', array(
-                'property_path' => false,
+                'mapped' => false,
             ))
         ;
     }
