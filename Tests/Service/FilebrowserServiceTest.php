@@ -8,6 +8,7 @@ use PHPUnit_Framework_TestCase,
     Symfony\Component\HttpFoundation\File\UploadedFile,
     Xi\Filelib\File\FileOperator,
     Xi\Filelib\File\File,
+    Xi\Filelib\File\Resource,
     Xi\Filelib\FileLibrary,
     Xi\Filelib\File\Upload\FileUpload,
     Xi\Filelib\Folder\FolderOperator;
@@ -126,7 +127,7 @@ class FilebrowserServiceTest extends PHPUnit_Framework_Testcase
        $files[] = $this->createFile('application/tussi');
        $files[] = $this->createFile('image/jpeg');
        $files[] = $this->createFile('text/plain');
- 
+       
        $imagefiles = $this->service->filterByType($files, array('image'));    
        $this->assertCount(3, $imagefiles);
        
@@ -137,7 +138,8 @@ class FilebrowserServiceTest extends PHPUnit_Framework_Testcase
     
     private function createFile($mimetype)
     {
-       return File::create(array('mimetype' => $mimetype));
+        $resource = Resource::create(array('mimetype' => $mimetype));
+       return File::create(array('resource' => $resource));
     }
 
     

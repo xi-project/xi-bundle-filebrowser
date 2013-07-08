@@ -8,10 +8,10 @@
         }
     ],
     "require": {
-        "xi/filelib": "2.1.x-dev",
-        "symfony/event-dispatcher": "=v2.1.0-BETA1",
-        "symfony/http-foundation": "=v2.1.0-BETA1",
-        "symfony/form": "=v2.1.0-BETA1"
+        "xi/filelib": "v0.7.0.x-dev",
+        "symfony/event-dispatcher": "2.2.*",
+        "symfony/http-foundation": "2.2.*",
+        "symfony/form": "2.2.*"
     },
 
     "autoload": {
@@ -19,6 +19,6 @@
             "Xi\\Bundle\\Filebrowser": "xi/bundle/filebrowser/"
         }
     },
-
-    "target-dir": "bundle/filebrowser"
+    
+    "target-dir": "Xi/Bundle/FilebrowserBundle"
 }
