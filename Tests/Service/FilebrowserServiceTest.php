@@ -38,8 +38,14 @@ class FilebrowserServiceTest extends PHPUnit_Framework_Testcase
     {
         parent::setUp();
 
-        $this->folderOperator = $this->getMockBuilder('Xi\Filelib\Folder\DefaultFolderOperator')->disableOriginalConstructor()->getMock();
-        $this->fileOperator = $this->getMockBuilder('Xi\Filelib\File\DefaultFileOperator')->disableOriginalConstructor()->getMock();
+        $this->folderOperator = $this->getMockBuilder('Xi\Filelib\Folder\DefaultFolderOperator')
+                ->disableOriginalConstructor()
+                ->setMethods(array('createByUrl', 'findFiles'))
+                ->getMock();
+        $this->fileOperator = $this->getMockBuilder('Xi\Filelib\File\DefaultFileOperator')
+                ->disableOriginalConstructor()
+                ->setMethods(array('prepareUpload', 'upload', 'getType'))
+                ->getMock();
 
         // mock an stdClass while problems mocking a proper FileUpload class
         // $this->fileUpload = $this->getMockBuilder('Xi\Filelib\File\Upload\FileUpload')->disableOriginalConstructor()->getMock();

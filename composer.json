@@ -12,10 +12,10 @@
     },
     
     "require-dev": {
-        "xi/filelib": "dev-symfony2.2-support",
-        "symfony/event-dispatcher": ">=2.1.0,<2.3-dev",
-        "symfony/http-foundation": ">=2.1.0,<2.3-dev",
-        "symfony/form": ">=2.1.0,<2.3-dev"
+        "xi/filelib": "dev-master",
+        "symfony/event-dispatcher": ">=2.1.0,<2.4-dev",
+        "symfony/http-foundation": ">=2.1.0,<2.4-dev",
+        "symfony/form": ">=2.1.0,<2.4-dev"
     },
 
     "autoload": {
